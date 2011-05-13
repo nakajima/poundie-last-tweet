@@ -2,11 +2,11 @@ class LastTweet < Poundie::Plugin
   register :last_tweet
 
   match do |message|
-    message.body =~ /last tweet /
+    message.body.include? "last tweet "
   end
 
   action do |message|
-    username = message.gsub("last tweet ", "").gsub("@", "").strip
+    username = message.body.gsub("last tweet ", "").gsub("@", "").strip
     puts "showing last tweet by @#{username}"
     res = get "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=#{username}"
     tweets = JSON.parse(res)
