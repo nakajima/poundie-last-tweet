@@ -4,4 +4,8 @@ A Poundie plugin for posting the last tweet from a given Twitter user to Campfir
 
 ## USAGE
 
-Just `require "poundie-last-tweet"` in your Poundie bot.
+Just `require "poundie-last-tweet"` in your Poundie bot, then say `last tweet [username]`. For example, posting
+
+    last tweet @nakajima
+
+will show my last tweet.
